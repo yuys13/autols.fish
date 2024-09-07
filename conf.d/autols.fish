@@ -5,9 +5,14 @@ function _install_autols --on-event autols_install
 end
 
 function __autols --on-variable PWD --description 'Automatically ls when the $PWD changes.'
-    if status --is-interactive
-        $autols_cmd
+    if not status --is-interactive
+        return
     end
+    if not set -q autols_cmd
+        ls
+        return
+    end
+    $autols_cmd
 end
 
 function _uninstall_autols --on-event autols_uninstall
