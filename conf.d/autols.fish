@@ -16,5 +16,9 @@ function __autols --on-variable PWD --description 'Automatically ls when the $PW
 end
 
 function _uninstall_autols --on-event autols_uninstall
-    functions -e __autols
+    set --erase autols_cmd
+
+    functions --erase _install_autols
+    functions --erase __autols
+    functions --erase _uninstall_autols
 end
