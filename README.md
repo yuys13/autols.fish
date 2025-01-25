@@ -1,11 +1,11 @@
-# autols.fish
+# fish-autols
 
 Automatically `ls` when the `$PWD` changes.
 
 ## Install
 
 ```fish
-fisher install yuys13/autols.fish
+fisher install yuys13/fish-autols
 ```
 
 ## Variables
