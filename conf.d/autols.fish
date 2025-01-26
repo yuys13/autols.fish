@@ -8,10 +8,11 @@ function __autols --on-variable PWD --description 'Automatically ls when the $PW
     if not status --is-interactive
         return
     end
-    if not set -q autols_cmd
-        ls
-        return
+
+    if not set --query autols_cmd
+        set -U autols_cmd ls
     end
+
     $autols_cmd
 end
 
